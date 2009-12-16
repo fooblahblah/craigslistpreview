@@ -3,8 +3,9 @@
     background-color: #f0f0f0	
 }
 
-img
+.clPrevImg img
 {
+    padding: 5px 5px 5px 5px;
     height: 300;
     width: 300;
 }
