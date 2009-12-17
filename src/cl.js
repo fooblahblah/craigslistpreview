@@ -10,10 +10,21 @@ $(function()
 	    );
 
 //	    $(a).addClass("highlight");
-
-	    $(this).parent().wrap('<div class="entryDiv"></div>');
-	    $(this).parents('.entryDiv').append('<div class="clPrevImg"></div>');
-	    $(this).parents('.entryDiv').find('.clPrevImg').load($(a).attr("href") + " img:lt(4)");
+	    
+	    var entryDiv =$(this).parent().wrap('<div class="entryDiv"></div>').
+		parents('.entryDiv');
+	    $(entryDiv).append('<div class="clPrevImg"></div>');
+	    $(entryDiv).find('.clPrevImg').
+		load($(a).attr("href") + " img:lt(4)",
+		     function()
+		     {
+			 $(entryDiv).find('.clPrevImg > img').each(
+			     function()
+			     {
+				 $(this).wrap('<a href="' + $(a).attr('href') + '"></a>');
+			     }
+			 );
+		     });
 	}
     );   
 });
