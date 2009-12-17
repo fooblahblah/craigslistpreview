@@ -11,14 +11,9 @@ $(function()
 
 //	    $(a).addClass("highlight");
 
-	    var parent = $(a).parent().get(0);
-
-	    $(parent).
-		wrap('<div class="entryDiv"></div>').
-		append('<div class="clPrevImg"></div>');
-
-	    $(parent).find(".clPrevImg").
-		append($(this).load($(a).attr("href") + " img:lt(4)"));
+	    $(this).parent().wrap('<div class="entryDiv"></div>');
+	    $(this).parents('.entryDiv').append('<div class="clPrevImg"></div>');
+	    $(this).parents('.entryDiv').find('.clPrevImg').load($(a).attr("href") + " img:lt(4)");
 	}
     );   
 });
