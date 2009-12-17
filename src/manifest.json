@@ -1,9 +1,9 @@
 {
     "name": "Craigslist Preview",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Extension to prefetch Craigslist ad images",
     "permissions": [
-	"http://api.flickr.com/"
+	"http://*.craigslist.org/"
     ],
     "content_scripts": [
 	{
@@ -12,8 +12,5 @@
 	    "css": ["cl.css"],
 	    "run_at": "document_start"
 	}
-    ],
-    "permissions": [ 
-        "http://*.craigslist.org/" 
     ]
 }
