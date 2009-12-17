@@ -6,7 +6,7 @@
 .clPrevImg img
 {
     padding: 1px 3px 1px 3px;
-    height: 300;
-    width: 300;
+    max-height: 300;
+    max-width: 300;
 }
 
