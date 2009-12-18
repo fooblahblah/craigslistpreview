@@ -11,16 +11,15 @@ $(function()
 
 	    var entryDiv =$(this).parent().wrap('<div class="entryDiv"></div>').
 		parents('.entryDiv');
-	    $(entryDiv).append('<div class="clPrevImg"></div>');
-	    
+	    var clPrevImg = $(entryDiv).append('<div class="clPrevImg"></div>').find(".clPrevImg");
+
 	    getAdPage($(a).attr("href"),
 		      function(data)
 		      {
-			  $(data).find('img').appendTo($(entryDiv).find('.clPrevImg'));
+			  $(data).find('img:lt(4)').appendTo($(clPrevImg));
 			  $(entryDiv).find('.clPrevImg > img').each(
 			      function()
 			      {
-				  console.log("img");
 				  $(this).wrap('<a href="' + $(a).attr('href') + '"></a>');
 			      }
 			  );
@@ -53,3 +52,4 @@ getAdPage = function(href, callback)
 	    }
 	});
 }
+
