@@ -1,8 +1,10 @@
 {
     "name": "Craigslist Preview",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "description": "Extension to prefetch Craigslist ad images",
     "background_page": "background.html",
+    "icons": { "48": "icon48.png",
+    	       "128": "icon128.png" },
     "permissions": [
 	"http://*.craigslist.org/",
 	"http://*.craigslist.ca/"
