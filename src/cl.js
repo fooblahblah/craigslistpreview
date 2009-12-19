@@ -1,6 +1,6 @@
 $(function() 
 {
-    $('p span:contains("pic"), p span:contains("img")').each(
+    $('p span.p').each(
 	function() 
 	{
 	    var a = $(this).siblings("a").filter(
@@ -10,14 +10,14 @@ $(function()
 	    );
 
 	    var entryDiv =$(this).parent().wrap('<div class="entryDiv"></div>').
-		parents('.entryDiv');
+		parent().get(0);
 	    var clPrevImg = $(entryDiv).append('<div class="clPrevImg"></div>').find(".clPrevImg");
-
+	    
 	    getAdPage($(a).attr("href"),
 		      function(data)
 		      {
 			  $(data).find('img:lt(4)').appendTo($(clPrevImg));
-			  $(entryDiv).find('.clPrevImg > img').each(
+  			  $(entryDiv).find('.clPrevImg > img').each(
 			      function()
 			      {
 				  $(this).wrap('<a href="' + $(a).attr('href') + '"></a>');
