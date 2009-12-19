@@ -15,7 +15,7 @@
 	        "http://*.craigslist.org/*",
 		"http://*.craigslist.ca/*"
 	    ],
-	    "js": ["jquery.js", "xhrproxy.js","cl.js"],
+	    "js": ["jquery.js", "xhrproxy.js", "cl.js"],
 	    "css": ["cl.css"],
 	    "run_at": "document_start"
 	}
