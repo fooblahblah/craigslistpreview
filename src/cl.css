@@ -6,7 +6,17 @@
 .clPrevImg img
 {
     padding: 1px 3px 1px 3px;
-    max-height: 300;
-    max-width: 300;
+    max-height: 200;
+    max-width: 200;
+}
+
+.spacer
+{
+    height: 20px;
+}
+
+#sizeSlider, #numSlider
+{
+    max-width: 400px;
 }
 

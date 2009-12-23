@@ -18,12 +18,19 @@ $(function()
 	}
     );   
     
-    getImages(hrefs);
+    loadSettings(
+	function(settings) 
+	{
+	    getImages(hrefs, settings);    
+	});
 });
 
-getImages = function(hrefs) 
+
+getImages = function(hrefs, settings) 
 {
     var obj = hrefs.shift();
+    var maxSize = settings.maxSize;
+    var maxImages = settings.maxImages;
 
     if(!obj) 
     {
@@ -33,15 +40,34 @@ getImages = function(hrefs)
     getAdPage(obj.href,
 	      function(data)
 	      {
-		  $(data).find('img:lt(4)').appendTo(obj.div).each(
+		  $(data).find("img:lt(" + maxImages + ")").appendTo(obj.div).each(
 		      function()
 		      {
+      			  $(this).css({ "max-height": maxSize, "max-width": maxSize });
 			  $(this).wrap('<a href="' + obj.href + '"></a>');
 		      }
 		  );
 		  
-		  $.doTimeout(50, function() { getImages(hrefs); });
+		  $.doTimeout(50, function() { getImages(hrefs, settings); });
 	      });
+}
+
+loadSettings = function(callback)
+{
+    proxySettings(
+	{
+	    onComplete: function(settings) 
+	    {
+		if(settings)
+		{
+		    callback(settings);    
+		}
+		else 
+		{
+		    console.log("Error proxying settings");
+		}	      
+	    }
+	});
 }
 
 getAdPage = function(href, callback)

@@ -4,6 +4,7 @@ var XHR_PROXY_PORT_NAME_ = 'XHRProxy_';
  * Should be called by the background page.
  */
 function setupXHRProxy() {
+    console.log("setupXHRProxy");
   chrome.extension.onConnect.addListener(function(port) {
     if (port.name != XHR_PROXY_PORT_NAME_)
       return;
