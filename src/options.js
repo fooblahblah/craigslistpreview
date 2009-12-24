@@ -1,10 +1,31 @@
 $(function() 
   {
+      var settings = loadSettings();
+      var maxSize;
+      var maxImages;
+
+      if($(settings).attr("maxSize"))
+      {
+	  maxSize = settings.maxSize;
+	  adjustImageSize(maxSize);
+
+	  // Initialize label
+	  $("#imageSize").val(maxSize);
+      }
+
+      if($(settings).attr("maxImages"))
+      {
+	  maxImages = settings.maxImages;
+
+	  // Initialize label
+	  $("#maxImages").val(maxImages);
+      }
+
       $("#sizeSlider").slider(
 	  { 
 	      "min": 25, 
 	      "max": 1000, 
-	      "value": 200, 
+	      "value": maxSize, 
 	      "slide": function(event, ui) 
 	      {
 		  $("#imageSize").val(ui.value);
@@ -20,7 +41,7 @@ $(function()
 	  { 
 	      "min": 1, 
 	      "max": 8, 
-	      "value": 4,
+	      "value": maxImages,
 	      "slide": function(event, ui) 
 	      {
 		  $("#maxImages").val(ui.value);
@@ -30,27 +51,6 @@ $(function()
 		  saveSettings({ "maxSize": $("#sizeSlider").slider("value"), "maxImages": ui.value });
 	      }
 	  });
-
-
-      var settings = loadSettings();
-      if($(settings).attr("maxSize"))
-      {
-	  var maxSize = settings.maxSize;
-	  adjustImageSize(maxSize);
-
-	  // Initialize label
-	  $("#imageSize").val(maxSize);
-      }
-
-      if($(settings).attr("maxImages"))
-      {
-	  var maxImages = settings.maxImages;
-//	  adjustImageSize(maxSize);
-
-	  // Initialize label
-	  $("#maxImages").val(maxImages);
-      }
-
   }
 );
 
