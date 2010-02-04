@@ -1,19 +1,21 @@
 {
     "name": "Craigslist Preview",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "Extension to prefetch Craigslist ad images",
     "background_page": "background.html",
     "icons": { "48": "icon48.png",
     	       "128": "icon128.png" },
     "permissions": [
 	"http://*.craigslist.org/",
-	"http://*.craigslist.ca/"
+	"http://*.craigslist.ca/",
+	"http://*.craigslist.hk/"
     ],
     "content_scripts": [
 	{
 	    "matches": [
 	        "http://*.craigslist.org/*",
-		"http://*.craigslist.ca/*"
+		"http://*.craigslist.ca/*",
+		"http://*.craigslist.hk/*"
 	    ],
 	    "js": [
 		"jquery-1.3.2.min.js", 
