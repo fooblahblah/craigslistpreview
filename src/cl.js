@@ -83,14 +83,12 @@ getAdPage = function(href, callback)
 	    url: href,
 	    onComplete: function(status, data) 
 	    {
-		if (status == 200) 
-		{
-		    callback(data);
-		} 
-		else 
+		if (status != 200) 
 		{
 		    console.log("HTTP Error " + status + " while retrieving data for " + href);
-		}
+		} 
+
+		callback(data);
 	    }
 	});
 }
