@@ -23,7 +23,7 @@ $(function()
 getImages = function(hrefs, settings)
 {
     var obj = hrefs.shift();
-    var maxSize = settings.maxSize;
+    var maxSize = 200; //settings.maxSize;
     var maxImages = settings.maxImages;
 
     if(!obj)
