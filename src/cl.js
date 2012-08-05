@@ -12,11 +12,13 @@ $(function()
         }
     );
 
-    loadSettings(
-        function(settings)
-        {
-            getImages(hrefs, settings);
-        });
+    getImages(hrefs, {});
+
+    // loadSettings(
+    //     function(settings)
+    //     {
+    //         getImages(hrefs, settings);
+    //     });
 });
 
 
@@ -24,7 +26,7 @@ getImages = function(hrefs, settings)
 {
     var obj = hrefs.shift();
     var maxSize = 200; //settings.maxSize;
-    var maxImages = settings.maxImages;
+    var maxImages = 4; //settings.maxImages;
 
     if(!obj)
     {
@@ -75,25 +77,24 @@ loadSettings = function(callback)
         });
 }
 
-getAdPage = function(href, callback)
+getAdPage = function(url, callback)
 {
-    if(href.indexOf("http://") < 0)
+    if(url.indexOf("http://") < 0)
     {
-        href = location.protocol + "//" + location.hostname + href;
+        url = location.protocol + "//" + location.hostname + url;
     }
 
-    proxyXHR(
-        {
-            method: 'GET',
-            url: href,
-            onComplete: function(status, data)
-            {
-                if (status != 200)
-                {
-                    console.log("HTTP Error " + status + " while retrieving data for " + href);
-                }
+    var request = new XMLHttpRequest();
 
-                callback(data);
+    request.open('GET', url, true);
+    request.onreadystatechange = function (e) {
+        if (request.readyState == 4) {
+            if (request.status == 200) {
+                callback(request.responseText);
+            } else {
+                console.log("request failed");
             }
-        });
+        }
+    };
+    request.send(null);
 }
