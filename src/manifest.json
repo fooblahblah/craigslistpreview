@@ -1,6 +1,6 @@
 {
     "name": "Craigslist Preview",
-    "version": "1.0.19",
+    "version": "1.0.20",
     "manifest_version" : 2,
     "description": "Extension to prefetch Craigslist ad images",
     "icons": { "48": "icon48.png",

@@ -40,7 +40,6 @@ getImages = function(hrefs, settings)
                       function()
                       {
                           obj.div.append('<a href="' + obj.href + '"><img src="' + $(this).attr('href') + '"></a>');
-                          obj.div.css({ "max-height": maxSize, "max-width": maxSize });
                           return obj.div;
                       }
                   );
