@@ -25,8 +25,7 @@ $(function()
 getImages = function(hrefs, settings)
 {
     var obj = hrefs.shift();
-    var maxSize = 200; //settings.maxSize;
-    var maxImages = 4; //settings.maxImages;
+    var maxImages = 4;
 
     if(!obj)
     {
@@ -48,7 +47,6 @@ getImages = function(hrefs, settings)
                       $(data).find("img:lt(" + maxImages + ")").appendTo(obj.div).each(
                           function()
                           {
-                              $(this).css({ "max-height": maxSize, "max-width": maxSize });
                               $(this).wrap('<a href="' + obj.href + '"></a>');
                           }
                       );
