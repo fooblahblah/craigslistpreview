@@ -35,7 +35,7 @@ getImages = function(hrefs, settings)
     getAdPage(obj.href,
               function(data)
               {
-                  var thumbs = $(data).find("div.tn > a:lt(" + maxImages + ")").map(
+                  var thumbs = $(data).find("div#thumbs > a:lt(" + maxImages + ")").map(
                       function()
                       {
                           obj.div.append('<a href="' + obj.href + '"><img src="' + $(this).attr('href') + '"></a>');

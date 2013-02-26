@@ -1,6 +1,6 @@
 {
     "name": "Craigslist Preview",
-    "version": "1.0.21",
+    "version": "1.0.23",
     "manifest_version" : 2,
     "description": "Extension to prefetch Craigslist ad images",
     "icons": { "48": "icon48.png",
@@ -14,10 +14,35 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*.craigslist.org/*",
-                "http://*.craigslist.ca/*",
-                "http://*.craigslist.hk/*",
-                "http://*.craigslist.co.uk/*"
+                "*://*.craigslist.org/*",
+                "*://*.craigslist.ca/*",
+                "*://*.craigslist.at/*",
+                "*://*.craigslist.cz/*",
+                "*://*.craigslist.fi/*",
+                "*://*.craigslist.de/*",
+                "*://*.craigslist.gr/*",
+                "*://*.craigslist.it/*",
+                "*://*.craigslist.pl/*",
+                "*://*.craigslist.pt/*",
+                "*://*.craigslist.es/*",
+                "*://*.craigslist.se/*",
+                "*://*.craigslist.ch/*",
+                "*://*.craigslist.com.tr/*",
+                "*://*.craigslist.co.uk/*",
+                "*://*.craigslist.com.cn/*",
+                "*://*.craigslist.hk/*",
+                "*://*.craigslist.co.in/*",
+                "*://*.craigslist.jp/*",
+                "*://*.craigslist.co.kr/*",
+                "*://*.craigslist.com.ph/*",
+                "*://*.craigslist.com.sg/*",
+                "*://*.craigslist.com.tw/*",
+                "*://*.craigslist.co.th/*",
+                "*://*.craigslist.com.au/*",
+                "*://*.craigslist.co.nz/*",
+                "*://*.craigslist.com.mx/*",
+                "*://*.craigslist.co.za/*",
+                "*://*.craigslist.com/*"
             ],
             "js": [
                 "jquery-1.3.2.min.js",
