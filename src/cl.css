@@ -1,13 +1,13 @@
 #highlight
 {
-    background-color: #f0f0f0	
+    background-color: #f0f0f0
 }
 
 .clPrevImg img
 {
     padding: 1px 3px 1px 3px;
-    max-height: 200;
-    max-width: 200;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .spacer
@@ -19,4 +19,3 @@
 {
     max-width: 400px;
 }
-
