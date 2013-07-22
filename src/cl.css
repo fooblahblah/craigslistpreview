@@ -3,6 +3,11 @@
     background-color: #f0f0f0
 }
 
+.clPrevImg
+{
+    min-height:200px;
+}
+
 .clPrevImg img
 {
     padding: 1px 3px 1px 3px;
