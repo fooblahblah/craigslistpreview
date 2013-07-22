@@ -5,11 +5,14 @@ $(function()
     $('p.row').each(
         function()
         {
-            var a = $(this).find("a");
-            var entryDiv = $(this).wrap('<div class="entryDiv"></div>').parent().get(0);
-            var clPrevImg = $(entryDiv).append('<div class="clPrevImg"></div>').find(".clPrevImg");
-            hrefs.push({ href: $(a).attr("href"), div: $(clPrevImg) });
-        }
+	    var picText = $(this).find(".px .p").text();
+	    if(picText.indexOf(' pic') !== -1){
+		var a = $(this).find("a");
+		var entryDiv = $(this).wrap('<div class="entryDiv"></div>').parent().get(0);
+		var clPrevImg = $(entryDiv).append('<div class="clPrevImg"></div>').find(".clPrevImg");
+		hrefs.push({ href: $(a).attr("href"), div: $(clPrevImg) });
+            }
+	}
     );
 
     getImages(hrefs, {});
